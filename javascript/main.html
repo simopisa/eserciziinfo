@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/script.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+    $('#form1').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url : $(this).attr('action') || window.location.pathname,
+            type: "GET",
+            data: $(this).serialize(),
+            success: function (data) {
+                $("#div1").html(data);
+            },
+            error: function (jXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+});
+    </script>
+    <title>prova</title>
+</head>
+<body>
+    <form onsubmit="myfunction()" id="form1">
+        <input type="text" name="stringa" id="idstringain">
+
+        <input type="submit" id="button">
+       
+    </form>
+    
+    
+    <div id="div1">
+        <br>
+    <textarea id="a1"></textarea>
+    <br>
+    <textarea id="a2"></textarea>
+    <br>
+    <textarea id="a3"></textarea>
+    <br>
+    <textarea id="a4"></textarea>
+    <br>
+    <textarea id="a5"></textarea>
+    <br>
+    <button id="bottone" onclick="return inserscilettera()">inserisci lettera</button>
+    </div>
+    
+</body>
+</html>
