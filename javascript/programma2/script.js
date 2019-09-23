@@ -1,5 +1,5 @@
 var tot=0;
-function togli() {
+const togli= () => {
     if (tot==0) {
         alert("non puoi togliere soldi, siamo a zero");
     }else{
@@ -7,7 +7,7 @@ function togli() {
     }
     document.getElementById("tot").innerHTML=tot;
 }
-function aggiungi() {
+const aggiungi = () => {
     
     tot=tot+2;
     

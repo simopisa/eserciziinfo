@@ -30,6 +30,7 @@ function vocali(){
         }
        
     }   
+
     return cont;
 }
 function lettere(){
@@ -48,7 +49,7 @@ function lettere(){
 function calcolaPerc(tot,num) {
     return ((num/tot) * 100).toFixed(0);
 }
-function inserscilettera(){
+const inserscilettera = () => {
     a=prompt("inserisci una lettera:");
     let pos=arr.indexOf(a);
     let var4=pos+1;

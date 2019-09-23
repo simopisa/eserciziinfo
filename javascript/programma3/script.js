@@ -1,5 +1,5 @@
 let arr=new Array();
-function funzione() {
+const funzione=()=> {
     let a;
     let cont=0;
     do {
