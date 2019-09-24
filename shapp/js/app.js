@@ -49,15 +49,16 @@ document.body.onkeyup = function(e) {
 function removeItem(e) {
 
   if (ConfermaOperazione()==true) {
+    e.target.parentElement.removeChild(e.target);
     $('body').bind('click',function (evt) {
 
       //alert('Nodo ' + evt.target.nodeName);
                                   
-      console.log($(evt.target).text());
+      //console.log($(evt.target).text());
       decolora($(evt.target).text());
       });
     
-    e.target.parentElement.removeChild(e.target);
+    
     
 
     
@@ -69,13 +70,11 @@ function removeItem(e) {
 }
 //===================================================================================================
 
-//===================================================================================================
-
 function caricalista(){
 
   var str=''; // variable to store the options
 
-  alimenti = new Array(["banane",1.3],["pere",2.2],["albicocche",4.2],["fragole",5.0],["pane",5.6],["latte",2.7],["salame",10]);
+  alimenti = new Array(["banane",1.3],["pere",2.2],["albicocche",4.2],["fragole",5.1],["pane",5.6],["latte",2.7],["salame",10]);
 
   for (var i=0; i < alimenti.length;++i){
 
@@ -230,6 +229,7 @@ function colora(item){
 
 
 }
+//===================================================================================================
 function decolora(item){
 
   let a=item.split('');
@@ -241,7 +241,7 @@ function decolora(item){
 
 
 
-  console.log(str);
+  //console.log(str);
 
   document.getElementById(str).style.backgroundColor=null;
 
