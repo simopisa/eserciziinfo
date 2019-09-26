@@ -19,3 +19,6 @@ const funzione=()=> {
     }
     alert(cont1);
 }
+var ciaooo=()=>{
+    console.log("ciao");
+}
