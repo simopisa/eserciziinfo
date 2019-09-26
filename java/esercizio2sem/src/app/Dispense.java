@@ -24,20 +24,25 @@ public class Dispense implements Runnable{
             this.sem2=s2;
         }
         public void run(){
+            int ran1=1;
             Random ran=new Random();
-            for (int i = 200; i>0 ; i--) {
+          while (App.dispenser>0) {
+              
+          
                 sem1.P();
                 try {
                     Thread.sleep(1000);
                 } catch (Exception e) {
                     
                 }
-                int ran1=ran.nextInt(10);
+                 ran1=ran.nextInt(10);
                 App.dispenser=App.dispenser-ran1;
                  System.out.println(nome+"ha consumato: "+ran1);
+                 System.out.println("livello dispenser: " + App.dispenser);
                 sem2.V();
-             
+          
              }
+             
         }
     }
 
