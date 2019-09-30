@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prova5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <form action="#" name="modulo" onsubmit="return funzione();">
+            <table align="center">
+                <tr>
+                    <th align="left" >NOME</th>
+                    <th><input  type="text" name="nome" value="" onblur="return controlla(this.name);"></th>
+                </tr>
+                <tr>
+                    <th align="left">COGNOME</th>
+                    <th><input type="text" name="cognome" value="" onblur="return controlla(this.name);"></th>
+                </tr>
+                <tr>
+                    <th align="left">GIORNI</th>
+                    <th><input type="text" name="giorni" value="" onblur="return controlla(this.name);"></th>
+                </tr>
+                <tr>
+                    <th align="left">LUOGO PRELIEVO</th>
+                    <th><input type="text" name="luogoprelievo" value="" onblur="return controlla(this.name);"></th>
+                </tr>
+                <tr>
+                    <th align="left">LUOGO RILASCIO</th>
+                    <th><input type="text" name="luogorilascio" value="" onblur="return controlla(this.name);"></th>
+                </tr>    
+                <tr>
+                    <th align="left">AUTO</th>
+                    <th>
+                        <select name="auto" onblur="return controlla(this.name);" >
+                            <option value="">Seleziona auto</option>
+                            <option value="audia4">Audi A4</option>
+                            <option value="mercedesclassec">Mercedes classe C</option>
+                            <option value="mercedesclasseb">Mercedes classe B</option>
+                            <option value="auditt">Audi TT</option>
+                            <option value="fiatgrandepunto">Fiat GrandePunto</option>
+                            <option value="fiatpanda">Fiat Panda</option>
+                            <option value="peugeot206">Peugeot 206</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th align="left">Benzina</th>
+                    <th align="left"><input type="radio" name="carburante" value="benzina" onblur="return controlla(this.name);"></th>
+                    <th align="left">Diesel</th>
+                    <th align="left"><input type="radio" name="carburante" value="diesel" onblur="return controlla(this.name);"></th>
+                </tr>
+                <tr>
+                    <th align="left">Metano</th>
+                    <th align="left"><input type="radio" name="carburante" value="metano" onblur="return controlla(this.name);"></th>
+                    <th align="left">Gpl</th>
+                    <th align="left"><input type="radio" name="carburante" value="gpl" onblur="return controlla(this.name);"></th>
+                </tr>
+                <tr>
+                    <th align="left">TIPOLOGIA NOLEGGIO</th>
+                    <th align="right">
+                        <select name="tipologianoleggio" onblur="return controlla(this.name);">
+                            <option value="">Seleziona tipologia noleggio</option>
+                            <option value="kmlimitati">Prezzo al Giorno con km limitati</option>
+                            <option value="kmillimitati">Prezzo al Giorno con km illimitati</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th align="left">TIPOLOGIA PAGAMENTO </th>
+                    <th align="right">
+                        <select name="tipologiapagamento" onblur="return controlla(this.name);">
+                            <option value="">Seleziona tipologia pagamento</option>
+                            <option value="cartacredito">Carta di Credito</option>
+                            <option value="bonificoconcauzione">Bonifico con cauzione</option>
+                            <option value="bancomatconcauzione">Bancomat con cauzione</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    
+                    <th align="left"><br><br><input type="submit" value="CONFERMA"></th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <div style="border: 1px solid black;">
+                            <table align="center">
+                                <tr>
+                                    <th style="border: 4px black double">CLIENTE</th>
+                                    <th style="border: 4px black double"><input type="text" name="cliente" value=""></th>
+                                </tr>
+                                <tr>
+                                    <th align= left; style="border: 4px black double">IMPORTO</th>
+                                    <th style="border: 4px black double"><input type="text" name="importo" value=""></th>
+                                </tr>
+                                <tr>
+                                    <th align= left; style="border: 4px black double">SCONTO ECO</th>
+                                    <th style="border: 4px black double"><input type="text" name="scontoeco" value=""></th>
+                                </tr>
+                                <tr>
+                                    <th align= left; style="border: 4px black double">SCONTO PROMO6</th>
+                                    <th style="border: 4px black double"><input type="text" name="scontopromo6" value=""></th>
+                                </tr>
+                                <tr>
+                                    <th align= left; style="border: 4px black double">SPESE</th>
+                                    <th style="border: 4px black double"><input type="text" name="spese" value=""></th>
+                                </tr>
+                                <tr>
+                                    <th align= left; style="border: 4px black double">CAUZIONE</th>
+                                    <th style="border: 4px black double"><input type="text" name="cauzione" value=""></th>
+                                </tr>
+                                <tr>
+                                    <th align= left; style="border: 4px black double">TOTALE</th>
+                                    <th style="border: 4px black double"><input type="text" name="totale" value=""></th>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                    </th>
+                </tr>
+            </table>  
+        </form>
+    </body>
+</html>

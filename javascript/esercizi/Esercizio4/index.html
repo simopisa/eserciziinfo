@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Prova4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <form action="#" name="modulo" onsubmit="return funzione(this.name);">
+            Cognome e nome:<br>
+            <input type="text" maxlength="50" name="cognomenome" value="" onblur="return funzione(this.name);">
+            <br><br>
+            Sesso:<br>
+            <input type="radio" name="genere" value="maschio">Maschio<br>
+            <input type="radio" name="genere" value="femmina">Femmina<br>
+            <input type="radio" name="genere" value="nonspec">nonSpecificato<br><br>
+            Ateneo:<br>
+            <select name="ateneo">
+                <option value="vuoto"></option>
+                <option value="Giur">Giurisprudenza</option>
+                <option value="Lingue">Lingue</option>
+                <option value="Lettere">Lettere</option>
+            </select>
+            <br><br>
+            CAP:<br>
+            
+            <br><br>
+            <input type="checkbox" name="professione" value="studentelavoratore"> Studente/Lavoratore<br>
+            <br>
+            Descrizione del lavoro svolto:<br>
+            <input type="text" maxlength="80" name="descrizione" value="">
+            <br><br>
+            <input type="submit" value="Submit">
+            <br><br>
+            <input type="reset" value="Reset">
+            
+        </form>
+    </body>
+</html>
