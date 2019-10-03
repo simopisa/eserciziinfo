@@ -40,13 +40,13 @@ public class Distributore implements Runnable {
             if (App.distributore<20) {
                 System.out.println("aspetto il rifornimento");
                 
-         try {
-             Thread.sleep(5000);
-         } catch (Exception e) {
-             
-         }
-         System.out.println("il distributore è stato rifornito, ora il valore è di "+ App.distributore);
-            }
+                try {
+                    Thread.sleep(5000);
+                } catch (Exception e) {
+                    
+                }
+                System.out.println("il distributore è stato rifornito, ora il valore è di "+ App.distributore);
+             }
             
      
          }
