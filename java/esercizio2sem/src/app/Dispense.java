@@ -37,7 +37,7 @@ public class Dispense implements Runnable{
                 }
                  ran1=ran.nextInt(10);
                 App.dispenser=App.dispenser-ran1;
-                 System.out.println(nome+"ha consumato: "+ran1);
+                 System.out.println(nome+" ha consumato: "+ran1);
                  System.out.println("livello dispenser: " + App.dispenser);
                 sem2.V();
           
