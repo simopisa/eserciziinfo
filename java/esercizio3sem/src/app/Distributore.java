@@ -40,6 +40,7 @@ public class Distributore implements Runnable {
             if (App.distributore<20) {
                 System.out.println("aspetto il rifornimento");
                 
+                
                 try {
                     Thread.sleep(5000);
                 } catch (Exception e) {
