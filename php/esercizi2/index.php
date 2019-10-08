@@ -22,7 +22,7 @@
         unset($value);
      
         echo "<p> array stampato per valore</p>";
-        asort($docente); 
+        my_sort($docente); 
         foreach ($docente as $key => $value) {
             echo "Nome=" . $key . ", Ramo d'insegnamento=" . $value."<br>";
         }
@@ -30,7 +30,7 @@
     function my_ksort(&$array1)
         {
         $keys=array_keys($array1);
-        sort($keys);
+        my_sort($keys);
         foreach($keys as $key)
             {
             $val=$array1[$key];
@@ -38,6 +38,18 @@
             $array1[$key]=$val;
             }
         }
+    function my_sort(&$array){
+        for($j = 0; $j < count($array); $j ++) {
+            for($i = 0; $i < count($array)-1; $i ++){
+        
+                if($array[$i] > $array[$i+1]) {
+                    $temp = $array[$i+1];
+                    $array[$i+1]=$array[$i];
+                    $array[$i]=$temp;
+                }       
+            }
+        }
+    }
     ?>
 </body>
 </html>
