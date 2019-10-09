@@ -32,7 +32,7 @@
     </Style>
     <Style id="yellowLineGreenPoly">
       <LineStyle>
-        <color>7f00ffff</color>
+        <color>7f00ff11</color>
         <width>4</width>
       </LineStyle>
       <PolyStyle>
@@ -66,7 +66,7 @@
         <width>1.5</width>
       </LineStyle>
       <PolyStyle>
-        <color>7d0000ff</color>
+        <color>7dff0000</color>
       </PolyStyle>
     </Style>
     <Style id="transBluePoly">
