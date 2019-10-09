@@ -1,39 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-       /* Set the size of the div element that contains the map */
-      #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
-    </style>
-  </head>
-  <body>
-    <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
-    <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfOdZQ0qXGn7HsFWtTIVItrbbTwjfTMb4&callback=initMap">
-    </script>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="heatmap.js"></script>
+  <script>
+  var myLatlng = new google.maps.LatLng(25.6586, -80.3568);
+// map options,
+var myOptions = {
+  zoom: 3,
+  center: myLatlng
+};
+// standard map
+map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+// heatmap layer
+heatmap = new HeatmapOverlay(map,
+  {
+    // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+    "radius": 2,
+    "maxOpacity": 1,
+    // scales the radius based on map zoom
+    "scaleRadius": true,
+    // if set to false the heatmap uses the global maximum for colorization
+    // if activated: uses the data maximum within the current map boundaries
+    //   (there will always be a red spot with useLocalExtremas true)
+    "useLocalExtrema": true,
+    // which field name in your data represents the latitude - default "lat"
+    latField: 'lat',
+    // which field name in your data represents the longitude - default "lng"
+    lngField: 'lng',
+    // which field name in your data represents the data value - default "value"
+    valueField: 'count'
+  }
+);
 
-Getting started
+var testData = {
+  max: 8,
+  data: [{lat: 24.6408, lng:46.7728, count: 3},{lat: 50.75, lng:-1.55, count: 1}, ...]
+};
+
+heatmap.setData(testData);
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
