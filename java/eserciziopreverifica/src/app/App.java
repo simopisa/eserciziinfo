@@ -20,7 +20,7 @@ public class App {
         for (int i = 0; i < amici.length; i++) {
             amici[i]=new Thread(new Segreto(i));
         }
-       //=======================================================
+        //=======================================================
         nom.start();
         amici[0].start();
         amici[1].start();

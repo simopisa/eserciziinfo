@@ -16,11 +16,15 @@ public class Segreto implements Runnable {
         //=======================================================
         while(controllo){
             App.semafori[nome].P();
+            //=======================================================
             if(App.alt){
-                System.out.println("sono l'amico "+nome+"ed il mio segreto è...");
-            }else{
+                System.out.println("sono l'amico "+nome+" ed il mio segreto è...");
+            }
+            else
+            {
                 controllo=false;
             }
+            //=======================================================
             App.s1.V(); 
         }
         //=======================================================
