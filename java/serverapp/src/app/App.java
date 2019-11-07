@@ -1,13 +1,11 @@
 package app;
 //****************************************
-//applicazione per client
+//applicazione server
 //****************************************
 public class App {
     public static void main(String[] args) throws Exception {
-        // java sockets con protocollo tcp/ip
-        ClientTCP client=new ClientTCP(6789, "localhost");
-        client.connetti();
-        client.comunica();
-
+        ServerTCP server=new ServerTCP(6789);
+        server.attendi();
+        server.comunica();
     }
 }
