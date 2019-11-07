@@ -22,7 +22,7 @@
                 array("cognome" => "8", "nome" => "8","classe" => "5"),
                 array("cognome" => "9", "nome" => "9","classe" => "4"),
          );
-
+            
          foreach ($alunni as $value) {
              foreach ($value as $key => $value1) {
                  if (strcmp($value1["classe"],"5inB")==0) {
