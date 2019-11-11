@@ -105,6 +105,7 @@
   
     };
   
+
     HeatmapOverlay.prototype.draw = function() {
       if (!this.map) { return; }
   
