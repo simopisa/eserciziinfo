@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url("style.css");
+    </style>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item">
+            <form action="function.php" method="post" onsubmit="return verifica();">
+                <p><b>SIGN IN*</b></p>
+                user:<input type="text" name="username" id="username">
+                password: <input type="password" name="password" id="password">
+                <input type="submit" value="sign in" class="button">
+                
+            </form>
+        </div>
+        <br>
+        <div class="flex-container rosso " ></div>
+        <div class="flex-item"">
+            <form action="registrati.php" method="post" onsubmit="return verifica1();">
+                <p><b>SIGN UP*</b></p>
+                user: <input type="text" name="username" id="username1"><br>
+                password: <input type="password" name="password" id="password1"><br>
+                telefono: <input type="number" name="telefono" id="telefono"><br>
+                email: <input type="email" name="email" id="email"><br>
+                <input type="submit" value="sign up" class=button>
+            </form>
+        </div>
+        
+    </div>
+    <footer>
+
+        *By logging in you agree to the ridiculously long terms that you didn't bother to read
+        
+    </footer>
+</body>
+
+</html>

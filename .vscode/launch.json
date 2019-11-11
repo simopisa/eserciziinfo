@@ -6,26 +6,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - App",
-            "request": "launch",
-            "mainClass": "App",
-            "projectName": "_14dcc"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - App",
-            "request": "launch",
-            "mainClass": "app.App",
-            "projectName": "_14dcc"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - prova",
-            "request": "launch",
-            "mainClass": "prova"
-        },
-        {
-            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"

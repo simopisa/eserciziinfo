@@ -10,7 +10,7 @@
     <?php
     
       
-        
+       
         $docente=array("Pietro"=>"Informatica","Giuseppe"=>"Chimica","Mauro"=>"Cat","Anna"=>"Analisi");
         my_ksort($docente);
         echo "<p> array stampato per chiave</p>";
@@ -26,7 +26,7 @@
         foreach ($docente as $key => $value) {
             echo "Nome=" . $key . ", Ramo d'insegnamento=" . $value."<br>";
         }
-
+        
     function my_ksort(&$array1)
         {
         $keys=array_keys($array1);
@@ -41,7 +41,7 @@
     function my_sort(&$array){
         for($j = 0; $j < count($array); $j ++) {
             for($i = 0; $i < count($array)-1; $i ++){
-        
+                
                 if($array[$i] > $array[$i+1]) {
                     $temp = $array[$i+1];
                     $array[$i+1]=$array[$i];
