@@ -20,6 +20,8 @@ foreach ($userlist as $user) {
 
 if ($success) {
     echo "<br> benvenuto $userN ti sei loggato. La tua mail è : $email. Il tuo numero di telefono è: $tel<br>";
+    setcookie("username", $userN);
+    setcookie("password", $passW);
 } else {
     echo "password errata, riprova <br><a href='index.html'>riprova</a>";
     
