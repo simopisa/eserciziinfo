@@ -44,15 +44,17 @@ public class ClientTCP {
         //invio stringa    
         do {
             try {
-               
+               do {
                 System.out.print(">>");
                 stringutente=tastiera.readLine();
                 
                 outversoserver.writeBytes(stringutente+"\n");
+               } while (!stringutente.contains("|"));
+               do {
                 //client attende la risposta e visualizza
                 stringdalserver=indalserver.readLine();
                 System.out.println(nomeserver+":"+porta+">> "+stringdalserver); 
-               
+                } while (!stringdalserver.contains("|"));
                
                 
             } catch (Exception e) {
