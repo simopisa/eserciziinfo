@@ -62,7 +62,7 @@ public class ClientTCP {
             } catch (Exception e) {
                 //TODO: handle exception
             }
-        } while (stringutente.compareTo("fine")!=0 && stringutente.compareTo("FINE")!=0);
+        } while (stringutente.compareTo("fine|")!=0 && stringutente.compareTo("FINE|")!=0 && stringdalserver.compareTo("fine|")!=0 && stringdalserver.compareTo("FINE|")!=0);
         try {
              //chiudo la connessione
 
