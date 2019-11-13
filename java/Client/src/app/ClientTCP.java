@@ -44,13 +44,14 @@ public class ClientTCP {
         //invio stringa    
         do {
             try {
-                System.out.println("inserisci la stringa da inviare");
+               
+                System.out.print(">>");
                 stringutente=tastiera.readLine();
-                System.out.println("invio stringa");
+                
                 outversoserver.writeBytes(stringutente+"\n");
                 //client attende la risposta e visualizza
                 stringdalserver=indalserver.readLine();
-                System.out.println("risposta: "+stringdalserver); 
+                System.out.println(nomeserver+":"+porta+">> "+stringdalserver); 
                
                
                 
