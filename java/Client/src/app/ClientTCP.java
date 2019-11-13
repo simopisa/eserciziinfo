@@ -6,6 +6,7 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.*;
 
+
 /**
  * ClientTCP
  */
@@ -32,7 +33,7 @@ public class ClientTCP {
             miosocket=new Socket(nomeserver, porta);
             indalserver=new BufferedReader(new InputStreamReader(miosocket.getInputStream()));
             outversoserver=new DataOutputStream(miosocket.getOutputStream());
-
+            System.out.println("connesso con: "+nomeserver+":"+porta);
         } catch (Exception e) {
           System.out.println("host sconosciuto");
         }
@@ -45,6 +46,7 @@ public class ClientTCP {
         do {
             try {
                do {
+                  
                 System.out.print(">>");
                 stringutente=tastiera.readLine();
                 
