@@ -12,3 +12,10 @@ pwd
 start
 cd
 pwd
+git pull
+git push
+git push
+git
+git fetch
+dit push
+git push
