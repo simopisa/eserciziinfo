@@ -1,2 +1,4 @@
 simo|pass|simo@simo.com|3381503161
 telch|passtelch|telch@ste.com|numero non inserito
+
+simo.pisa|banana|simo@vero.it|44455566677

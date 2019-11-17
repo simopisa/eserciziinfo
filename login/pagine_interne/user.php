@@ -14,8 +14,10 @@
     if (!$_COOKIE['verifica']) {
        header("location: ../index.php");
     }
-    echo "<h1> welcome in " . $_COOKIE["username"]."</h1>";
-    echo  "<br><h2><a href='../index.php'>esci</a></h2>";
+    echo "<h1> Welcome in " . $_COOKIE["username"]."</h1>";
+    echo "<h2> Your mail is " . $_COOKIE["email"]." and your phone number: ".$_COOKIE["telefono"]."</h2>";
+    echo "<h2><a href='../index.php'>esci</a></h2>";
+
    ?>
 
 </body>

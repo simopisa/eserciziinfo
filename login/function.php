@@ -32,6 +32,8 @@ if ($success) {
     header("location: pagine_interne/user.php");
     setcookie("username", $userN);
     setcookie("password", $passW);
+    setcookie("email", $email);
+    setcookie("telefono", $tel);
     setcookie("verifica",true);
 } else {
     echo "password errata, riprova <br><a href='index.php'>riprova</a>";
