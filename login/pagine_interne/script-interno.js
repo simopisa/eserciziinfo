@@ -28,7 +28,7 @@ function funzione() {
             document.getElementById("bottonee").innerHTML = "OKAY, YOU WIN";
             break;
         case 7:
-            document.getElementById("bottonee").innerHTML = "THIS IS THE SECRET";
+            document.getElementById("bottonee").innerHTML = "THE TRUTH IS THAT...";
 
 
             break;
