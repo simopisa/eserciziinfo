@@ -182,10 +182,7 @@ li a {
     top: 20%;
     left: 15%;
     z-index: 90;
-    transform: rotate(210deg);
-    border-radius: 50%;
-    box-shadow:
-      0 0 60px 10px #fff;
+    
 }
 .object_jupiter{
     position: absolute;
@@ -204,10 +201,7 @@ li a {
     position: absolute;
     top: 12%;
     left: 25%;
-    transform: rotate(210deg);
-    border-radius: 50%;
-    box-shadow:
-      0 0 60px 10px #fff;
+    
 
 }
 
@@ -228,19 +222,6 @@ li a {
  
 }
 
-.object_sat{
-    animation: rotate-astronaut 200s infinite linear both alternate-reverse;
-}
-
-.box_sat{
-    z-index: 110 !important;
-    position: absolute;
-    top: 60%;
-    right: 60%;
-    will-change: transform;
-    animation: move-astronaut 50s infinite linear both alternate;
- 
-}
 
 
 .stars{
@@ -312,13 +293,3 @@ li a {
     }
 }
 
-@-webkit-keyframes animateThis {
-    0% {
-      width: 100px;
-      height: 100px;
-    }
-    100% {
-      width: 100%;
-      height: 100%;
-    }
-  }

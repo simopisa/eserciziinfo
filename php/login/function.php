@@ -22,5 +22,6 @@ if ($success) {
 } else {
     echo "<script>alert('username o password errarara, riprova');</script>";
     header("Location: index.html");
+    
 }
 ?>

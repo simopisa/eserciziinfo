@@ -41,14 +41,3 @@ function funzione() {
     }
 
 }
-function destroy() {
-    
-    document.getElementById("bottonee").innerHTML = "WHAT DID YOU DO\n WE ALL GONNA DIE";
-    setTimeout(() => {
-        document.getElementById("black").style.animation="animateThis 10s";
-        document.getElementById("black").style.animation="fill-mode: forwards";
-        setTimeout(() => {
-            document.getElementById("principale").style.display="none";
-        }, 10000);
-    }, 1000);
-}

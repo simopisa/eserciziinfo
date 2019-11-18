@@ -16,7 +16,7 @@ $tel = $_POST['telefono'];
 $tot = "\n" . $userN . "|" . $passW . "|" . $mail . "|" . $tel;
 
 $filename = "users.txt";
-// $userlist = file('users.txt');
+$userlist = file('users.txt');
 $bol=true;
 foreach ($userlist as $user) {
     $user_details = explode('|', $user);

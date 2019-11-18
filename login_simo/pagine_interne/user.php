@@ -10,28 +10,10 @@
         @import url("styyle.css");
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="script-interno.js">
-
-    </script>
-    <script type="text/javascript">
-    function abc() {
-        alert("Success");
-    }
-</script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            $("#draggable").draggable();
-        });
-        $(function() {
-            $("#draggable1").draggable();
-        });
-        
-    </script>
+    <script src="script-interno.js"></script>
 </head>
 
-<body id="principale">
+<body>
     <?php
     if (!$_COOKIE['verifica']) {
         header("location: ../index.php");
@@ -50,7 +32,6 @@
 
                 <div class="navbar-links">
                     <ul>
-                        <li><a href="#" onclick="destroy();">BLACK HOLE?</a></li>
                         <li><a href="#"><?php echo "Mail: " . $_COOKIE["email"]; ?></a></li>
                         <li><a href="#"><?php echo "Phone: " . $_COOKIE["telefono"]; ?></a></li>
                         <li><a href="#"><?php echo "Welcome " . $_COOKIE["username"]; ?></a></li>
@@ -64,17 +45,13 @@
             </div>
             <div class="objects">
                 <img class="object_rocket" src="icone/rocket.svg" width="40px">
-                <div class="earth-moon" >
-                    <img class="object_earth" src="icone/black.svg" width="100px" id="black">
-                    <img class="object_moon" src="icone/earth.svg" width="30px">
-                    <img class="object_jupiter" src="icone/jupiter.png" width="80px" >
+                <div class="earth-moon">
+                    <img class="object_earth" src="icone/earth.svg" width="100px">
+                    <img class="object_moon" src="icone/moon.svg" width="80px">
 
                 </div>
-                <div class="box_astronaut" draggable="true" id="draggable">
+                <div class="box_astronaut">
                     <img class="object_astronaut" src="icone/astronautt.png" width="140px">
-                </div>
-                <div class="box_sat" draggable="true" id="draggable1">
-                    <img class="object_sat" src="icone/sat.svg" width="40px">
                 </div>
             </div>
             <div class="glowing_stars">
@@ -83,7 +60,6 @@
                 <div class="star"></div>
                 <div class="star"></div>
                 <div class="star"></div>
-                
 
             </div>
 
