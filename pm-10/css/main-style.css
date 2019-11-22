@@ -35,6 +35,7 @@
     width: 100%;
     height: 100%;
     padding: 0%;
+    z-index: 1;
     background-position: bottom;
     background-size: cover;
     opacity: 0;
@@ -77,6 +78,7 @@
   .c-mobile-view__inner {
     overflow: hidden;
     width: 100%;
+    
     height: 100%;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -91,7 +93,7 @@
     height: 36px;
     top: 120px;
     left: 160px;
-    z-index: -1;
+    z-index: 1;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -194,7 +196,8 @@
     -webkit-transition-delay: 0;
   }
   .c-mobile__topbar {
-    position: relative;
+    z-index: 0;
+    position: static;
     overflow: hidden;
     width: 100%;
     height: 10%;
@@ -216,10 +219,10 @@
     background: -webkit-gradient(linear, left top, right bottom, from(#5873fe), to(#871cde));
     background: -moz-linear-gradient(top, #5873fe, #871cde);
   }
-  .c-mobile__topbar a {
+  .linkss a {
     text-decoration: none;
-    color: #FFF;
-    letter-spacing: 3px;
+    color: rgb(255, 255, 255);
+    
     font-size: 1.4em;
     z-index: 1;
     transition-property: all;
@@ -296,7 +299,7 @@
     position: absolute;
     right: 32px;
     top: 32px;
-    z-index: 1;
+    
     color: #FFF;
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -520,6 +523,8 @@
     height: 150px;
   }
   .c-card__details__top {
+    vertical-align: center;
+    text-align: center;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
