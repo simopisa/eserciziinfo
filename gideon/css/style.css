@@ -39,10 +39,10 @@ svg{
 } 
 #transcript{
     outline: none;
-    height: 0px;
-    width: 0px;
+    /* height: 0px;
+    width: 0px; */
     opacity: 100%;
-    display: none;
+    /* display: none; */
    
 }
 #output{
