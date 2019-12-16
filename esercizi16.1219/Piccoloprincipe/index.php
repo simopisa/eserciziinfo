@@ -45,19 +45,13 @@ session_start();
     <br><br>
     <?php
     if (isset($_POST['username']) && isset($_POST["psw"])) {
-      if ($_POST["username"] == "pippo" && $_POST["psw"] == "12345678") {
-        echo '
-        <br>
-        <br>
-        <div class="menu">
-        <a href="#">Home</a>
-        <a href="pages/storia.php">Storia</a>
-        </div>
-        <br><br>
-        
-      ';
-      $_SESSION["sessione"]=true;
-      }else{
+      $_SESSION["user"] = $_POST["username"];
+      $_SESSION["psw"] = $_POST["psw"];
+      if ($_SESSION["user"] == "pippo" && $_SESSION["psw"] == "12345678") {
+
+
+        $_SESSION["sessione"] = true;
+      } else {
         echo '<script>alert("nome utente o pasword errata")</script>';
       }
     }
@@ -74,22 +68,30 @@ session_start();
       <br>
 
       <div class="formm">
+
+
         <?php
-        if (isset($_SESSION["sessione"]) && $_SESSION["sessione"]==true) {
-          echo "benvenuto ".$_POST["username"];
-          ?>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+        if (isset($_SESSION["sessione"]) && $_SESSION["sessione"] == true) {
+        ?>
+          <div class="menuu">
+
+            <button onclick="window.location.href='#'" id="submit">Home</button>
+            <button onclick="window.location.href='pages/storia.php'" id="submit">Storia</button>
+          </div>
+          <br><?php
+              echo "benvenuto " .   $_SESSION["user"];
+              ?>
+
+
+
+          <br><br>
           <br>
           <br>
           <button onclick="window.location.href='pages/logout.php'" id="submit">Logout</button>
-          
-          <?php
-        } else {
-          echo '
+
+        <?php
+            } else {
+              echo '
           <h3>LOGIN</h3>
           <form action="#" method="POST" id="my-form" onsubmit="return controlla();">
 
@@ -98,7 +100,7 @@ session_start();
             <input type="submit" value="submit" id="submit">
           </form>
           ';
-        }
+            }
         ?>
 
       </div>
