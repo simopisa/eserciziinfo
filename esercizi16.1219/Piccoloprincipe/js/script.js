@@ -17,5 +17,21 @@ $(document).ready(function () {
 
 });
 function controlla(){
-    
+    if (document.getElementById("username").value!="") {
+        if (document.getElementById("psw").value!="") {
+            if (document.getElementById("psw").value.length>=5) {
+                rtn=true;
+            } else {
+                rtn=false;
+                document.getElementById("psw").style.border="1px solid red";
+            }
+        }else{
+            rtn=false;
+            document.getElementById("psw").style.border="1px solid red";
+        }
+    }else{
+        rtn=false;
+        document.getElementById("username").style.border="1px solid red";
+    }
+    return rtn;
 }

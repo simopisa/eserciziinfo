@@ -117,5 +117,33 @@ h1 {
 }
 .formm{
     margin: 0 auto;
-    
+    width: 30%;
+    border: 1px solid white;
+    padding: 1%;
+}
+#username{
+    border-radius: 5px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+#psw{
+    border-radius: 5px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+#submit{
+    border-radius: 5px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    color:white;
+    background:radial-gradient(ellipse at bottom,
+    #013155 0%, #01162e 100%); 
+    height: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
 }

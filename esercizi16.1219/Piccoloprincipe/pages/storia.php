@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_SESSION["sessione"]) && $_SESSION["sessione"] == true) {
+?>
+<?php
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -115,3 +119,10 @@ session_start();
 </body>
 
 </html>
+
+
+<?php
+}else{
+    header("location: ../index.php");
+}
+?>
