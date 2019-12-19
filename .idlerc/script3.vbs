@@ -2,7 +2,7 @@ Set WshShell = WScript.CreateObject("WScript.Shell")
 do
 dim r
 randomize
-r = int(rnd*7) + 1
+r = int(rnd*6) + 1
 select case r
     case 1
         '... 
@@ -28,10 +28,6 @@ select case r
         '... 
         WshShell.SendKeys "{DEL}"
         WScript.Sleep 100   
-    case 7 
-    
-     WshShell.SendKeys "HAHA"
-    WScript.Sleep 100  
          
 end select
    
