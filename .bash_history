@@ -64,3 +64,4 @@ ls -a
 dir -a
 dir -la
 git init --help
+git push
