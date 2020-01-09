@@ -43,9 +43,11 @@ class UDPServer {
     public void Comunica() {
         try {
           
-               
+               /**
+                * !non va
+                */
                 do {
-
+                    //FIXME: non va.
                     // ======================================================================================================
  pacchettoricevuto = new DatagramPacket(datiricevuti, datiricevuti.length);
                 serverSocket.receive(pacchettoricevuto);
