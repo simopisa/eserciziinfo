@@ -1,0 +1,6 @@
+ForegroundColour=0,255,255
+BackgroundColour=0,0,0
+CursorType=underscore
+Term=xterm
+Font=Consolas
+ThemeFile=vga
