@@ -1,12 +1,12 @@
 package app;
 
 import java.net.*;
+import java.util.Date;
 import java.util.HashMap;
-/** 
-* * author: simone pisoni
-* ! 09/01/2020
-* ? server udp
-*/
+
+/**
+ * * author: simone pisoni ! 09/01/2020 ? server udp
+ */
 class UDPServer {
     // ======================================================================================================
     private DatagramSocket serverSocket;
@@ -19,12 +19,13 @@ class UDPServer {
     private String stringadainviare = "";
     private DatagramPacket pacchettodainviare;
     HashMap<String, Integer> Clients;
-   
+
     // ======================================================================================================
     public UDPServer(int port) {
         this.port = port;
         Clients = new HashMap<String, Integer>();
     }
+
     // ======================================================================================================
     public void attendi() {
         try {
@@ -38,7 +39,7 @@ class UDPServer {
         }
 
     }
-     
+
     public void Comunica() {
         try {
 
@@ -46,20 +47,26 @@ class UDPServer {
 
                 // ======================================================================================================
                 pacchettoricevuto = new DatagramPacket(datiricevuti, datiricevuti.length);
-                // ======================================================================================================                
+                // ======================================================================================================
                 serverSocket.receive(pacchettoricevuto);
                 // ======================================================================================================
-                System.out.println("connesso con " + pacchettoricevuto.getAddress() + ":" + pacchettoricevuto.getPort());
+                System.out
+                        .println("connesso con " + pacchettoricevuto.getAddress() + ":" + pacchettoricevuto.getPort());
                 // ======================================================================================================
                 if (Clients.get(pacchettoricevuto.getAddress().toString()) == null) {
-
-                    Clients.put(pacchettoricevuto.getAddress().toString(), 1);
+                    if (Clients.size()>=10) {
+                        System.out.println("10 client connessi, attendi che qualcuno si disconnetta");
+                    } else {
+                        Clients.put(pacchettoricevuto.getAddress().toString(), 1);
                     System.out.println("nuovo client aggiunto alla lista");
+                    }
+                    
 
-                // ======================================================================================================
+                    // ======================================================================================================
                 } else {
                     // ======================================================================================================
-                    Clients.put(pacchettoricevuto.getAddress().toString(),  Clients.get((pacchettoricevuto.getAddress().toString())) + 1);
+                    Clients.put(pacchettoricevuto.getAddress().toString(),
+                            Clients.get((pacchettoricevuto.getAddress().toString())) + 1);
 
                     System.out.println(Clients.get(pacchettoricevuto.getAddress().toString()));
                     // ======================================================================================================
@@ -68,19 +75,20 @@ class UDPServer {
                 if (Clients.get(pacchettoricevuto.getAddress().toString()) >= 10) {
 
                     System.out.println("10 richieste effettuate, ora il servizio è a pagamento");
-                // ======================================================================================================
+                    // ======================================================================================================
                 } else {
                     // ======================================================================================================
                     stringaricevuta = new String(pacchettoricevuto.getData());
                     System.out.println("<<CLIENT: " + stringaricevuta);
                     // ======================================================================================================
-                    int lunghezza=pacchettoricevuto.getLength();
-                    stringaricevuta=stringaricevuta.substring(0, lunghezza);
+                    int lunghezza = pacchettoricevuto.getLength();
+                    stringaricevuta = stringaricevuta.substring(0, lunghezza);
                     // ======================================================================================================
                     indirizzoip = pacchettoricevuto.getAddress();
                     port = pacchettoricevuto.getPort();
+                    Date oggi = new Date();
                     // ======================================================================================================
-                    stringadainviare = stringaricevuta.toUpperCase();
+                    stringadainviare = oggi.toString();
                     datidainviare = stringadainviare.getBytes();
                     // ======================================================================================================
                     pacchettodainviare = new DatagramPacket(datidainviare, datidainviare.length, indirizzoip, port);
@@ -88,13 +96,13 @@ class UDPServer {
                     serverSocket.send(pacchettodainviare);
                     // ======================================================================================================
                 }
-            // ======================================================================================================
+                // ======================================================================================================
             } while (!stringaricevuta.equals("fine"));
             System.out.println("chiudo la connessione");
             serverSocket.close();
         } catch (Exception e) {
-            //TODO: handle exception
-             
+            // TODO: handle exception
+
         }
 
     }
