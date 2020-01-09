@@ -42,64 +42,72 @@ class UDPServer {
 
     public void Comunica() {
         try {
+          
+               
+                do {
 
-            do {
-
-                // ======================================================================================================
-                pacchettoricevuto = new DatagramPacket(datiricevuti, datiricevuti.length);
-                // ======================================================================================================
+                    // ======================================================================================================
+ pacchettoricevuto = new DatagramPacket(datiricevuti, datiricevuti.length);
                 serverSocket.receive(pacchettoricevuto);
-                // ======================================================================================================
-                System.out
-                        .println("connesso con " + pacchettoricevuto.getAddress() + ":" + pacchettoricevuto.getPort());
-                // ======================================================================================================
-                if (Clients.get(pacchettoricevuto.getAddress().toString()) == null) {
-                    if (Clients.size()>=10) {
-                        System.out.println("10 client connessi, attendi che qualcuno si disconnetta");
+                int portaa = pacchettoricevuto.getPort();
+                    // ======================================================================================================
+
+                    // ======================================================================================================
+                    System.out.println("connesso con " + pacchettoricevuto.getAddress() + ":" + portaa);
+                    System.out.println("numero client connessi:" + Clients.size());
+                    // ======================================================================================================
+                    if (Clients.get(pacchettoricevuto.getAddress().toString() + ":" + portaa) == null) {
+                        if (Clients.size() >= 10) {
+                            System.out.println("10 client connessi, attendi che qualcuno si disconnetta");
+                        } else {
+                            Clients.put(pacchettoricevuto.getAddress().toString() + ":" + portaa, 1);
+                            System.out.println(pacchettoricevuto.getAddress().toString() + ":" + portaa);
+                            System.out.println("nuovo client aggiunto alla lista");
+                        }
+
+                        // ======================================================================================================
                     } else {
-                        Clients.put(pacchettoricevuto.getAddress().toString(), 1);
-                    System.out.println("nuovo client aggiunto alla lista");
+                        // ======================================================================================================
+                        Clients.put(pacchettoricevuto.getAddress().toString(),
+                                Clients.get((pacchettoricevuto.getAddress().toString())) + 1);
+
+                        System.out.println(Clients.get(pacchettoricevuto.getAddress().toString()));
+                        // ======================================================================================================
                     }
-                    
+                    // ======================================================================================================
+                    if (Clients.get(pacchettoricevuto.getAddress().toString() + ":" + portaa) >= 10) {
 
+                        System.out.println("10 richieste effettuate, ora il servizio è a pagamento");
+                        stringadainviare = "10 richieste effettuate, ora il servizio è a pagamento";
+                        datidainviare = stringadainviare.getBytes();
+                        pacchettodainviare = new DatagramPacket(datidainviare, datidainviare.length, indirizzoip, port);
+                        serverSocket.send(pacchettodainviare);
+                        // ======================================================================================================
+                    } else {
+                        // ======================================================================================================
+                        stringaricevuta = new String(pacchettoricevuto.getData());
+                        System.out.println("<<CLIENT: " + stringaricevuta);
+                        // ======================================================================================================
+                        int lunghezza = pacchettoricevuto.getLength();
+                        stringaricevuta = stringaricevuta.substring(0, lunghezza);
+                        // ======================================================================================================
+                        indirizzoip = pacchettoricevuto.getAddress();
+                        port = pacchettoricevuto.getPort();
+                        Date oggi = new Date();
+                        // ======================================================================================================
+                        stringadainviare = oggi.toString();
+                        datidainviare = stringadainviare.getBytes();
+                        // ======================================================================================================
+                        pacchettodainviare = new DatagramPacket(datidainviare, datidainviare.length, indirizzoip, port);
+                        System.out.println(">>SERVER: " + stringadainviare);
+                        serverSocket.send(pacchettodainviare);
+                        // ======================================================================================================
+                    }
                     // ======================================================================================================
-                } else {
-                    // ======================================================================================================
-                    Clients.put(pacchettoricevuto.getAddress().toString(),
-                            Clients.get((pacchettoricevuto.getAddress().toString())) + 1);
+                } while (!stringaricevuta.equals("fine"));
+               
+            
 
-                    System.out.println(Clients.get(pacchettoricevuto.getAddress().toString()));
-                    // ======================================================================================================
-                }
-                // ======================================================================================================
-                if (Clients.get(pacchettoricevuto.getAddress().toString()) >= 10) {
-
-                    System.out.println("10 richieste effettuate, ora il servizio è a pagamento");
-                    // ======================================================================================================
-                } else {
-                    // ======================================================================================================
-                    stringaricevuta = new String(pacchettoricevuto.getData());
-                    System.out.println("<<CLIENT: " + stringaricevuta);
-                    // ======================================================================================================
-                    int lunghezza = pacchettoricevuto.getLength();
-                    stringaricevuta = stringaricevuta.substring(0, lunghezza);
-                    // ======================================================================================================
-                    indirizzoip = pacchettoricevuto.getAddress();
-                    port = pacchettoricevuto.getPort();
-                    Date oggi = new Date();
-                    // ======================================================================================================
-                    stringadainviare = oggi.toString();
-                    datidainviare = stringadainviare.getBytes();
-                    // ======================================================================================================
-                    pacchettodainviare = new DatagramPacket(datidainviare, datidainviare.length, indirizzoip, port);
-                    System.out.println(">>SERVER: " + stringadainviare);
-                    serverSocket.send(pacchettodainviare);
-                    // ======================================================================================================
-                }
-                // ======================================================================================================
-            } while (!stringaricevuta.equals("fine"));
-            System.out.println("chiudo la connessione");
-            serverSocket.close();
         } catch (Exception e) {
             // TODO: handle exception
 
