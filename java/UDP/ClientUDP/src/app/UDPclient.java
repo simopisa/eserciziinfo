@@ -1,21 +1,25 @@
 package app;
-
+/** 
+* * author: simone pisoni
+* ! 09/01/2020
+* ? client udp
+*/
 import java.io.*;
 import java.net.*;
 
 class UDPClient {
     //===================================================================================================================
-    String nomeserver;
-    BufferedReader input;
-    DatagramSocket clientSocket;
-    InetAddress indirizzoip;
-    int porta;
-    byte[] bytedainviare;
-    byte[] bytedaricevere;
-    String stringaricevuta;
-    String stringadainviare;
-    DatagramPacket pacchettodainviare;
-    DatagramPacket pacchettoricevuto;
+    private String nomeserver;
+    private BufferedReader input;
+    private DatagramSocket clientSocket;
+    private InetAddress indirizzoip;
+    private int porta;
+    private byte[] bytedainviare;
+    private byte[] bytedaricevere;
+    private String stringaricevuta;
+    private String stringadainviare;
+    private DatagramPacket pacchettodainviare;
+    private DatagramPacket pacchettoricevuto;
     //===================================================================================================================
     public UDPClient(String nomeserver, int porta) {
         this.nomeserver = nomeserver;
