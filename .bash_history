@@ -1,7 +1,3 @@
-bash: .git/: Is a directory
-bash: .git/: Is a directory
-
-simone.pisoni@AULA74-PC28 MINGW64 /c/Users/simone.pisoni.ITIB/Desktop/git/spesa4 ((820bd2a...))
 $ echo "errore1
 > echo "errore1" >>lista.txt
 >
@@ -498,3 +494,7 @@ git lg
 git gco HEAD^
  git rhs
 git lg
+git push
+git add .
+git commit -am "manuale sql"
+git push
