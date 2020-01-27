@@ -1,6 +1,3 @@
-$ echo "errore1
-> echo "errore1" >>lista.txt
->
 > ^C
 simone.pisoni@AULA74-PC28 MINGW64 /c/Users/simone.pisoni.ITIB/Desktop/git/spesa4 ((820bd2a...))
 $ .git/||.git/
@@ -497,4 +494,7 @@ git lg
 git push
 git add .
 git commit -am "manuale sql"
+git push
+git add .
+git commit -am "esercizio macchine"
 git push

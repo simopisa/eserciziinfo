@@ -64,7 +64,7 @@ public class MulticastServer {
         System.out.println("inserisci la temperatura dell'acqua calda");
         Scanner in=new Scanner(System.in);
         acalda=in.nextInt();
-        
+
 
         String invia = "";
         DatagramPacket pacchetto;
@@ -109,6 +109,7 @@ public class MulticastServer {
         // ===========================================================================================================================
         mSocket.close();
         // ===========================================================================================================================
+        
     }
 
 }
