@@ -46,33 +46,33 @@ $dbpass = "";
             <h1>Il piccolo principe</h1>
         </div>
         <br><br>
-        <?php
-    #===============================================================================================
-    $connessione = mysqli_connect($db_host, $dbuser, $dbpass);
-    #===============================================================================================
-    if (!$connessione) {
-      die("connessione fallita: ");
-    }
-    #===============================================================================================
-    mysqli_select_db($connessione, $db_name) or die("impossibile selezionare database");
-    #===============================================================================================
-
-    if (isset($_POST['username']) && isset($_POST["psw"])) {
-      $_SESSION["user"] = $_POST["username"];
-      $_SESSION["psw"] = $_POST["psw"];
+          <?php
       #===============================================================================================
-      $result = mysqli_query($connessione, "SELECT * FROM utenti WHERE username='" . $_SESSION["user"] . "' AND password= '" . $_SESSION["psw"] . "'");
-      if (mysqli_num_rows($result) == 0) {
-        echo "<script>alert('nome utente o password errata')</script>";
-      }else{
-        $_SESSION["sessione"]=true;
+      $connessione = mysqli_connect($db_host, $dbuser, $dbpass);
+      #===============================================================================================
+      if (!$connessione) {
+        die("connessione fallita: ");
       }
-       #===============================================================================================
-    }
+      #===============================================================================================
+      mysqli_select_db($connessione, $db_name) or die("impossibile selezionare database");
+      #===============================================================================================
+
+      if (isset($_POST['username']) && isset($_POST["psw"])) {
+        $_SESSION["user"] = $_POST["username"];
+        $_SESSION["psw"] = $_POST["psw"];
+        #===============================================================================================
+        $result = mysqli_query($connessione, "SELECT * FROM utenti WHERE username='" . $_SESSION["user"] . "' AND password= '" . $_SESSION["psw"] . "'");
+        if (mysqli_num_rows($result) == 0) {
+          echo "<script>alert('nome utente o password errata')</script>";
+        }else{
+          $_SESSION["sessione"]=true;
+        }
+        #===============================================================================================
+      }
 
 
 
-    ?>
+      ?>
         <div class="wrapper">
             <div class="frasi" id="frasi">
             </div>
