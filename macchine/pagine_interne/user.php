@@ -158,7 +158,7 @@ if (isset($_SESSION["sessione"]) && $_SESSION["sessione"] == true && $_SESSION["
 
                                         <select name="alimentazione" data-rule="required">
                                             <option value="DIESEL">diesel</option>
-                                            <option value="BENIZINA">benzina</option>
+                                            <option value="BENZINA">benzina</option>
                                         </select>
                                         <div class="validation"></div>
                                     </div>
@@ -275,7 +275,7 @@ if (isset($_SESSION["sessione"]) && $_SESSION["sessione"] == true && $_SESSION["
                     </div>
                     <!-- =0================================================================================================================================================== -->
                     <div id="ricquery">
-                        <form>
+                        <form action="#">
                             <h1>Ricerca query</h1>
                             <div class="contentform">
 
@@ -296,28 +296,28 @@ if (isset($_SESSION["sessione"]) && $_SESSION["sessione"] == true && $_SESSION["
                                         <button class="query" onclick="window.location.href = 'paggine/tarmodmar.php'">Informazioni auto</button>
                                     </div>
                                     <div class="form-group">
-                                        <button class="query" onclick="window.location.href = 'paggine/autoefiles.php'">Case che non hanno venduto auto</button>
+                                        <button class="query" onclick="window.location.href = 'paggine/casenoauto.php'">Case che non hanno venduto auto</button>
                                     </div>
                                 </div>
 
                                 <div class="rightcontact">
                                     <div class="form-group">
-                                        <button class="query" onclick="window.location.href = 'paggine/lettere.php'">Auto prodotte a torino</button>
+                                        <button class="query" onclick="window.location.href = 'paggine/torino.php'">Auto prodotte a torino</button>
                                     </div>
                                     <div class="form-group">
-                                        <button class="query" onclick="window.location.href = 'paggine/autoefiles.php'">Numero totale auto</button>
+                                        <button class="query" onclick="window.location.href = 'paggine/numtotauto.php'">Numero totale auto</button>
                                     </div>
                                     <div class="form-group">
-                                        <button class="query" onclick="window.location.href = 'paggine/autoefiles.php'">Prezzo max, min e media</button>
+                                        <button class="query" onclick="window.location.href = 'paggine/maxminmed.php'">Prezzo max, min e media</button>
                                     </div>
                                     <div class="form-group">
-                                        <button class="query" onclick="window.location.href = 'paggine/autoefiles.php'">Somma prezzi auto fiat</button>
+                                        <button class="query" onclick="window.location.href = 'paggine/sommaprezfiat.php'">Somma prezzi auto fiat</button>
                                     </div>
                                     <div class="form-group">
-                                        <button class="query" onclick="window.location.href = 'paggine/autoefiles.php'">Numero auto di case automobilstiche</button>
+                                        <button class="query" onclick="window.location.href = 'paggine/casemagtre.php'">Numero auto di case automobilstiche</button>
                                     </div>
                                     <div class="form-group">
-                                        <button class="query" onclick="window.location.href = 'paggine/autoefiles.php'">Spese proprietario</button>
+                                        <button class="query" onclick="window.location.href = 'paggine/speseproprietario.php'">Spese proprietario</button>
                                     </div>
                                 </div>
                             </div>

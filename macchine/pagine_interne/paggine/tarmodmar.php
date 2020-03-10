@@ -81,7 +81,7 @@ if (isset($_SESSION["sessione"]) && $_SESSION["sessione"] == true) {
                 return ($htmltable);
             }
 
-            $result = mysqli_query($connessione, "SELECT targa, modello, auto.nome_casa, nazione, cognome, nome FROM proprietario, auto, casa WHERE auto.IDproprietario=proprietario.IDproprietario AND auto.nome_casa=casa.nome_casa");
+            $result = mysqli_query($connessione, "SELECT targa, modello, auto.nome_casa AS modello, nazione, cognome, nome, indirizzo, citta FROM proprietario, auto, casa WHERE auto.IDproprietario=proprietario.IDproprietario AND auto.nome_casa=casa.nome_casa");
 
 
 

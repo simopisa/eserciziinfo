@@ -90,8 +90,11 @@ if (isset($_SESSION["sessione"]) && $_SESSION["sessione"] == true) {
 
                 return ($htmltable);
             }
-
+            if (isset($_POST["casa"])) {
                 $result = mysqli_query($connessione, "SELECT * from auto where  nome_casa ='" . $_POST["casa"] . "'");
+        
+
+            }
             
 
 
